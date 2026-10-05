@@ -1,0 +1,99 @@
+/* --- CSS VARIABLES --- */
+:root {
+    --bg-black: #0a0a0a; 
+    --bg-gray: #e0e0e0;  
+    --text-dark: #222222;
+    --text-light: #e0e0e0;
+    --accent: #00bcd4;
+}
+
+/* --- GLOBAL RESETS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Diagonal background mostly visible on the Home section */
+    background: linear-gradient(105deg, var(--bg-gray) 55%, var(--bg-black) 55%);
+    min-height: 100vh; 
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR STYLING --- */
+#navbar .nav-link {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Active Link Styling */
+#navbar .nav-link.active {
+    border-bottom: 3px solid white; 
+    color: #fff; 
+    padding-bottom: 5px;
+}
+
+/* Hover State */
+#navbar .nav-link:hover {
+    border-bottom: 3px solid white;
+    padding-bottom: 5px;
+    color: #fff; /* Ensure text turns white on hover */
+}
+
+/* --- BUTTON STYLING --- */
+/* We target the specific class .custom-btn to avoid breaking default Bootstrap buttons */
+.custom-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+.custom-btn:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+    transform: translateY(-3px);
+}
+
+/* --- CARD HOVER EFFECTS --- */
+.card-hover {
+    transition: transform 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+}
+
+/* --- FOOTER LINKS --- */
+.hover-white:hover {
+    color: #fff !important;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    /* Remove the hard diagonal line on mobile, it looks messy on small screens */
+    body {
+        background: var(--bg-gray);
+    }
+    
+    /* Center text on mobile home */
+    #home .text-center-md {
+        text-align: center;
+    }
+    
+    /* Adjust navbar spacing */
+    .navbar-collapse {
+        background-color: #212529; /* Dark bg for mobile menu */
+        padding: 15px;
+        border-radius: 0 0 10px 10px;
+    }
+}
